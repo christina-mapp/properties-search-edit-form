@@ -16,6 +16,10 @@ Steps:
 9- Add security and OWASP Stinger.
 10- Pagination in results pages.
 11- Review and Answer questions.
+12- Host using tomcat
+13- Create unit Tests using mockito and run them.
+14- Smoke test.
+
 
 Project: properties-search-edit-form:
 - Spring Boot back end
