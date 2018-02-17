@@ -1,0 +1,59 @@
+A simple project to simulate searching through and editing properties saved in a database table.
+Business Requirements: Form that searches and edits properties in a database.
+Main purpose: Retain learned knowledge about spring, spring boot, maven, oracle DB, SQL, AngularJS, RESTFul web service, 
+data persistence, OWASP Stinger security, liquibase and other technologies. 
+
+Steps:
+0- Connect to GitHub.
+1- Maven and the pom file.
+2- Set up DB and connect to it.
+3- Setup liquibase and YAML files
+4- Create DB table(s)
+5- Set up RESTFul API with MVC and factory pattern in mind.
+6- Not how Spring boot is used.
+7- Set up DAO and connect to DB with persistence.
+8- Create front end with AngularJS and MVC in mind.
+9- Add security and OWASP Stinger.
+10- Pagination in results pages.
+11- Review and Answer questions.
+
+Project: properties-search-edit-form:
+- Spring Boot back end
+- Uses SQL backend. Oracle.
+- Uses MAVEN config. liquibase, YAML files, DAOs, Hibernate (for schema) and SQL files to initialize
+database with schema and data.
+- Uses YAML files for spring configuration.
+- Factory pattern to search type of property.
+- Uses MVC in Java Spring and in AngularJS
+- AngularJS front end to search for key/value pairs.
+- AngularJS to update without refresh, use derivatives, 3 types of properties.
+- FilterRequest in back end to properly filter.
+- OWASP Stinger with rulesets and regex to secure field inputs
+- Pagination
+
+
+Should be able to answer these questions:
+- What defines a RESTful web service and how is it different than SOAP.
+- How did you set up the backend for this service?
+- How did you connect the Angular front end to the restful web service?
+- What is a directive in AngularJS? and How is it used?
+- How did you use Angular controllers in this project?
+- What is Java Spring and what is Java Spring Boot and how are they different than say Struts 2?
+- What is MVC and did you use it? If so … how?
+- What persistence framework did you use? Hibernate? and how did you use it?
+- What is a POJO and how have you used it?
+- What is factory pattern and how did you use it to solve a design problem?
+- What is OWASP Stinger? and how did you use it in Java Spring to secure the application?
+- How did you implement key/value tags filtering in AngularJS? What parts where in the front end and what parts
+were in the back end and why?
+- How did you use CRUD SQL queries to initialize the database?
+- What is a DAO? and how did you use it in your project?
+- What is separation of concerns?
+- Mention one other design patterns other than Factory pattern and explain what it is and how you used it, if at all?
+- Mention one other programming principle other than separation of concerns and explain what it is and perhaps
+how you used it, if at all?
+- What is liquibase?
+- What is maven?
+- What is pagination and how did you use it in a project?
+- What is hibernate and JPA and how are they different and how did you use any of them, if at all, in a project?
+
