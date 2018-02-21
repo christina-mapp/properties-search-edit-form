@@ -60,4 +60,5 @@ how you used it, if at all?
 - What is maven?
 - What is pagination and how did you use it in a project?
 - What is hibernate and JPA and how are they different and how did you use any of them, if at all, in a project?
+- What are microservices and how are they different than RestFul services?
 
