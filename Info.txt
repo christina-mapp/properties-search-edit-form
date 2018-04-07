@@ -4,21 +4,22 @@ Main purpose: Retain learned knowledge about spring, spring boot, maven, oracle 
 data persistence, OWASP Stinger security, liquibase and other technologies. 
 
 Steps:
-0- Connect to GitHub.
-1- Maven and the pom file.
-2- Set up DB and connect to it.
-3- Setup liquibase and YAML files
-4- Create DB table(s)
-5- Set up RESTFul API with MVC and factory pattern in mind.
-6- Not how Spring boot is used.
-7- Set up DAO and connect to DB with persistence.
-8- Create front end with AngularJS and MVC in mind.
-9- Add security and OWASP Stinger.
-10- Pagination in results pages.
-11- Review and Answer questions.
-12- Host using tomcat
-13- Create unit Tests using mockito and run them.
-14- Smoke test.
+0- Connect to GitHub.                                                   done
+1- Maven and the pom file.                                              -
+2- Set up DB and connect to it.                                         -
+3- Setup liquibase and YAML files.                                      -
+4- Create DB table(s)                                                   -
+5- Set up RESTFul API with MVC and factory pattern in mind.             -
+6- Not how Spring boot is used.                                         -
+7- Set up DAO and connect to DB with persistence.                       -
+8- Create front end with AngularJS and MVC in mind.                     -
+-- today --
+9- Add security and OWASP Stinger.                                      -
+10- Pagination in results pages.                                        -
+11- Review and Answer questions.                                        -
+12- Host using tomcat                                                   -
+13- Create unit Tests using mockito and run them.                       -
+14- Smoke test.                                                         -
 
 
 Project: properties-search-edit-form:
