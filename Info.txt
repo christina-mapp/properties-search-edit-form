@@ -59,6 +59,8 @@ were in the back end and why?
 how you used it, if at all?
 - What is liquibase?
 - What is maven?
+I used Maven mainly as a build tool to help with building multiple jars and manage dependencies and versions. It also
+helps with setting up the project structure, building, publishing and deployment.
 - What is pagination and how did you use it in a project?
 - What is hibernate and JPA and how are they different and how did you use any of them, if at all, in a project?
 - What are microservices and how are they different than RestFul services?
