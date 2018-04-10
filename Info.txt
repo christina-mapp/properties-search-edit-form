@@ -5,7 +5,7 @@ data persistence, OWASP Stinger security, liquibase and other technologies.
 
 Steps:
 0- Connect to GitHub.                                                   done
-1- Maven and the pom file.                                              -
+1- Maven and the pom file.                                              done
 2- Set up DB and connect to it.                                         -
 3- Setup liquibase and YAML files.                                      -
 4- Create DB table(s)                                                   -
