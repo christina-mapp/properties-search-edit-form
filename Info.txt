@@ -8,7 +8,7 @@ Steps:
 1- Maven and the pom file.                                              done
 2- Set up DB and connect to it.                                         done
 3- Setup liquibase and YAML files.                                      done
-4- Create DB table(s)                                                   -
+4- Create DB table(s)                                                   done
 5- Set up RESTFul API with MVC and factory pattern in mind.             -
 6- Note how Spring boot is used.                                        -
 7- Set up DAO and connect to DB with persistence.                       done

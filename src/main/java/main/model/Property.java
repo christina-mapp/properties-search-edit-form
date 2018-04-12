@@ -1,10 +1,13 @@
 package main.model;
 
+import lombok.*;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Data
 @Entity
 public class Property {
 
@@ -12,43 +15,13 @@ public class Property {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
     private String propName;
-    private String propDesc;
+    private String description;
 
     protected Property() {}
 
-    public Property(String propName, String propDesc) {
+    public Property(String propName, String description) {
         this.propName = propName;
-        this.propDesc = propDesc;
+        this.description = description;
     }
 
-    @Override
-    public String toString() {
-        return String.format(
-                "Property[id=%d, firstName='%s', lastName='%s']",
-                id, propName, propDesc);
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getPropName() {
-        return propName;
-    }
-
-    public void setPropName(String propName) {
-        this.propName = propName;
-    }
-
-    public String getDescription() {
-        return propDesc;
-    }
-
-    public void setDescription(String description) {
-        this.propDesc = description;
-    }
 }
