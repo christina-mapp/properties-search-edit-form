@@ -28,6 +28,17 @@ public class MainController {
         return "Saved";
     }
 
+    @GetMapping(path="/findbylastname")
+    public @ResponseBody Iterable<Customer> findByLastName (@RequestParam String lastName) {
+        return customerRepository.findByLastName(lastName);
+    }
+
+    @GetMapping(path="/findbyid")
+    public @ResponseBody Customer findById (@RequestParam Long id) {
+        return customerRepository.findById(id)
+                .get();
+    }
+
     @GetMapping(path="/all")
     public @ResponseBody Iterable<Customer> getAllUsers() {
         // This returns a JSON or XML with the users

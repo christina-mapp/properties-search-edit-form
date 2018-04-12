@@ -1,0 +1,60 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 1
+      author: springuser
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+          - tableExists:
+              schemaName: prop_db
+              tableName: customer
+      changes:
+        - createTable:
+            tableName: customer
+            columns:
+              - column:
+                  name: id
+                  type: bigint(20)
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(100)
+              - column:
+                  name: last_name
+                  type: varchar(100)
+
+  - changeSet:
+      id: 2
+      author: springuser
+      changes:
+        - insert:
+            tableName: customer
+            columns:
+              - column:
+                  name: first_name
+                  value: First
+              - column:
+                  name: last_name
+                  value: Last
+        - insert:
+            tableName: customer
+            columns:
+              - column:
+                  name: first_name
+                  value: Mostafa
+              - column:
+                  name: last_name
+                  value: Habib
+        - insert:
+            tableName: customer
+            columns:
+              - column:
+                  name: first_name
+                  value: Mostafa1
+              - column:
+                  name: last_name
+                  value: Habib1

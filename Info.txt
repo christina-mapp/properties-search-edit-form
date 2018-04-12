@@ -7,17 +7,16 @@ Steps:
 0- Connect to GitHub.                                                   done
 1- Maven and the pom file.                                              done
 2- Set up DB and connect to it.                                         done
-3- Setup liquibase and YAML files.                                      -
+3- Setup liquibase and YAML files.                                      done
 4- Create DB table(s)                                                   -
 5- Set up RESTFul API with MVC and factory pattern in mind.             -
-6- Not how Spring boot is used.                                         -
-7- Set up DAO and connect to DB with persistence.                       -
+6- Note how Spring boot is used.                                        -
+7- Set up DAO and connect to DB with persistence.                       done
 8- Create front end with AngularJS and MVC in mind.                     -
--- today --
 9- Add security and OWASP Stinger.                                      -
 10- Pagination in results pages.                                        -
 11- Review and Answer questions.                                        -
-12- Host using tomcat                                                   -
+12- Host using tomcat                                                   done
 13- Create unit Tests using mockito and run them.                       -
 14- Smoke test.                                                         -
 
