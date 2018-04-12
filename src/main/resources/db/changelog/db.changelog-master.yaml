@@ -8,53 +8,53 @@ databaseChangeLog:
         - not:
           - tableExists:
               schemaName: prop_db
-              tableName: customer
+              tableName: property
       changes:
         - createTable:
-            tableName: customer
+            tableName: property
             columns:
               - column:
                   name: id
-                  type: bigint(20)
+                  type: int
                   autoIncrement: true
                   constraints:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: first_name
+                  name: prop_name
                   type: varchar(100)
               - column:
-                  name: last_name
-                  type: varchar(100)
+                  name: prop_desc
+                  type: varchar(500)
 
   - changeSet:
       id: 2
       author: springuser
       changes:
         - insert:
-            tableName: customer
+            tableName: property
             columns:
               - column:
-                  name: first_name
-                  value: First
+                  name: prop_name
+                  value: prop 1
               - column:
-                  name: last_name
-                  value: Last
+                  name: prop_desc
+                  value: prop 1 description
         - insert:
-            tableName: customer
+            tableName: property
             columns:
               - column:
-                  name: first_name
-                  value: Mostafa
+                  name: prop_name
+                  value: prop 2
               - column:
-                  name: last_name
-                  value: Habib
+                  name: prop_desc
+                  value: prop 2 description
         - insert:
-            tableName: customer
+            tableName: property
             columns:
               - column:
-                  name: first_name
-                  value: Mostafa1
+                  name: prop_name
+                  value: prop 3
               - column:
-                  name: last_name
-                  value: Habib1
+                  name: prop_desc
+                  value: prop 3 description
