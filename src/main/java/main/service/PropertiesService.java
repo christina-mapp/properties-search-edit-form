@@ -9,7 +9,7 @@ public interface PropertiesService {
 
     void save(Property property);
 
-    Optional<Property> findById(int id);
+    Optional<Property> findById(Long id);
 
     Optional<Property> findByPropName(String propName);
 }

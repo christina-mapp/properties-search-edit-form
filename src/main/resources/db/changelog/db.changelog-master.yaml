@@ -24,9 +24,11 @@ databaseChangeLog:
                   name: prop_name
                   type: varchar(100)
               - column:
-                  name: prop_desc
+                  name: description
                   type: varchar(500)
-
+              - column:
+                  name: type
+                  type: varchar(20)
   - changeSet:
       id: 2
       author: springuser
@@ -38,8 +40,11 @@ databaseChangeLog:
                   name: prop_name
                   value: prop 1
               - column:
-                  name: prop_desc
+                  name: description
                   value: prop 1 description
+              - column:
+                  name: type
+                  value: public
         - insert:
             tableName: property
             columns:
@@ -47,8 +52,11 @@ databaseChangeLog:
                   name: prop_name
                   value: prop 2
               - column:
-                  name: prop_desc
+                  name: description
                   value: prop 2 description
+              - column:
+                  name: type
+                  value: secure
         - insert:
             tableName: property
             columns:
@@ -56,5 +64,8 @@ databaseChangeLog:
                   name: prop_name
                   value: prop 3
               - column:
-                  name: prop_desc
+                  name: description
                   value: prop 3 description
+              - column:
+                  name: type
+                  value: public

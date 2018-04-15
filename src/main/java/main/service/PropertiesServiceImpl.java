@@ -2,6 +2,7 @@ package main.service;
 
 import main.model.Property;
 import main.repository.PropertiesRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -9,11 +10,8 @@ import java.util.Optional;
 @Service
 public class PropertiesServiceImpl implements PropertiesService{
 
+    @Autowired
     private PropertiesRepository propertiesRepository;
-
-    public PropertiesServiceImpl(PropertiesRepository propertiesRepository) {
-        this.propertiesRepository = propertiesRepository;
-    }
 
     @Override
     public Iterable<Property> findAll() {
@@ -26,7 +24,7 @@ public class PropertiesServiceImpl implements PropertiesService{
     }
 
     @Override
-    public Optional<Property> findById(int id) {
+    public Optional<Property> findById(Long id) {
         return propertiesRepository.findById(id);
     }
 
