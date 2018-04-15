@@ -18,6 +18,7 @@ Steps:
 11- Host using tomcat                                                   done
 12- Create unit Tests using mockito and run them.                       -
 13- Smoke test.                                                         done
+14- Use sql inserts statements from yaml file.                          -
 
 
 Project: properties-search-edit-form:
