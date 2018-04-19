@@ -9,11 +9,12 @@ Steps:
 2- Set up DB and connect to it.                                         done
 3- Setup liquibase and YAML files.                                      done
 4- Create DB table(s)                                                   done
-5- Set up RESTFul API with MVC and strategy pattern in mind.            -
-6- Use sql inserts statements from yaml file.                           -
 7- Set up DAO and connect to DB with persistence.                       done
 8- Create front end with AngularJS and MVC in mind.                     done
 9- Host using tomcat                                                    done
-10- Smoke test.                                                         done
-11- Use AngularJS front end to search for key/value pairs.              -
-12- How did you implement pagination in AngularJS results page?         -
+10- Use JPA inheritance as a means to implement Strategy design.        -
+11- Implement search with MVC and strategy pattern.                     -
+12- Use AngularJS front end to search for key/value pairs.              -
+13- Use sql inserts statements from yaml file.                          -
+14- How did you implement pagination in AngularJS results page?         -
+15- Smoke test.                                                         done
