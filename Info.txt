@@ -12,8 +12,8 @@ Steps:
 7- Set up DAO and connect to DB with persistence.                       done
 8- Create front end with AngularJS and MVC in mind.                     done
 9- Host using tomcat                                                    done
-10- Implement search with MVC and strategy pattern.                     -
-11- Use AngularJS front end to search for key/value pairs.              -
+10- Implement search with MVC and strategy pattern.                     done
+11- Use AngularJS front end to search using strategy.                   done
 12- Use sql inserts statements from yaml file.                          -
 13- How did you implement pagination in AngularJS results page?         -
 14- Smoke test.                                                         done

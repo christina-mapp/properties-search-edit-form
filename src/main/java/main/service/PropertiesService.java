@@ -2,14 +2,16 @@ package main.service;
 
 import main.model.Property;
 
-import java.util.Optional;
-
 public interface PropertiesService {
     Iterable<Property> findAll();
 
     void save(Property property);
 
-    Optional<Property> findById(Long id);
+    Iterable<Property> searchByPropName(String propName);
 
-    Optional<Property> findByPropName(String propName);
+    Iterable<Property> searchByType(String type);
+
+    Iterable<Property> searchByDescription(String description);
+
+    Iterable<Property> searchById(Long id);
 }

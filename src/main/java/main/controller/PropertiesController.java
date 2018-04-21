@@ -2,6 +2,7 @@ package main.controller;
 
 import main.model.Property;
 import main.service.PropertiesService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,19 +13,16 @@ import java.util.*;
 @RequestMapping(path="/props") // This means URL's start with /props (after Application path)
 public class PropertiesController {
 
+    @Autowired
     private PropertiesService propertiesService;
 
-    public PropertiesController(PropertiesService propertiesService) {
-        this.propertiesService = propertiesService;
-    }
-
     @GetMapping("/")
-    public String index() {
+    public @ResponseBody String index() {
         return "Greetings from Spring Boot!";
     }
 
     @GetMapping("/resource")
-    public Map<String,Object> greeting() {
+    public @ResponseBody Map<String,Object> greeting() {
         Map<String,Object> model = new HashMap<>();
         model.put("id", UUID.randomUUID().toString());
         model.put("content", "Greetings from Spring Boot!");
@@ -32,29 +30,39 @@ public class PropertiesController {
     }
 
     @GetMapping(path="/add")
-    public ResponseEntity<String> addNewProp(@RequestParam String propName
-            , @RequestParam String propDesc, @RequestParam String type) {
+    public @ResponseBody ResponseEntity<String> addNewProp(@RequestParam String propName
+            , @RequestParam String description, @RequestParam String type) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
 
-        Property n = new Property(propName, propDesc, type);
+        Property n = new Property(propName, description, type);
         propertiesService.save(n);
         return new ResponseEntity<>(HttpStatus.CREATED);
-    }
-
-    @GetMapping(path="/findbypropname")
-    public @ResponseBody Property findByPropName (@RequestParam String propName) {
-        return propertiesService.findByPropName(propName).orElse(null);
-    }
-
-    @GetMapping(path="/findbyid")
-    public @ResponseBody Property findById (@RequestParam Long id) {
-        return propertiesService.findById(id).orElse(null);
     }
 
     @GetMapping(path="/all")
     public @ResponseBody Iterable<Property> getAllProperties() {
         // This returns a JSON or XML with the users
         return propertiesService.findAll();
+    }
+
+    @GetMapping(path="/searchbypropname")
+    public @ResponseBody Iterable<Property> searchByPropName (@RequestParam String propName) {
+        return propertiesService.searchByPropName(propName);
+    }
+
+    @GetMapping(path="/searchbytype")
+    public @ResponseBody Iterable<Property> searchByType (@RequestParam String type) {
+        return propertiesService.searchByType(type);
+    }
+
+    @GetMapping(path="/searchbydescription")
+    public @ResponseBody Iterable<Property> searchByDescription (@RequestParam String description) {
+        return propertiesService.searchByDescription(description);
+    }
+
+    @GetMapping(path="/searchbyid")
+    public @ResponseBody Iterable<Property> searchById (@RequestParam Long id) {
+        return propertiesService.searchById(id);
     }
 }

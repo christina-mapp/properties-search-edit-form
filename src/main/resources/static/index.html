@@ -1,7 +1,6 @@
 <!doctype html>
 <html>
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
     <title>Hello AngularJS</title>
     <style type="text/css">
         [ng\:cloak], [ng-cloak], .ng-cloak {
@@ -12,45 +11,86 @@
 
 <body ng-app="myPropsApp">
 <div class="container">
-    <h1>Greeting</h1>
+    <div class="page-header"><h1>Properties Page</h1></div>
+
     <div ng-controller="propsController" ng-cloak class="ng-cloak">
-        <table>
+
+        <select ng-model="selectedStrategy"
+                ng-options="opt.value as opt.label
+                for
+                opt in strategies">
+        </select>
+
+        <form name="searchPropForm">
+            <div class="page-header" ng-if="selectedStrategy.length > 0">
+                <h3>Filter properties {{selectedStrategy}}</h3>
+            </div>
+            <div ng-if="selectedStrategy == 0">
+                <span class="label label-default">Property name</span>
+                <input type="text" class="form-control" ng-model="search.propName"
+                       placeholder="Property name" required ng-keyup="search()">
+            </div>
+            <div ng-if="selectedStrategy == 1">
+                <span class="label label-default">Property type</span>
+                <input type="text" class="form-control" ng-model="search.type"
+                       placeholder="Property Type" required ng-keyup="search()">
+            </div>
+            <div ng-if="selectedStrategy == 2">
+                <span class="label label-default">Property description</span>
+                <input type="text" class="form-control" ng-model="search.description"
+                       placeholder="Property Description" required ng-keyup="search()">
+            </div>
+            <div ng-if="selectedStrategy == 3">
+                <span class="label label-default">Property ID</span>
+                <input type="text" class="form-control" ng-model="search.id"
+                       placeholder="Property ID" required ng-keyup="search()">
+            </div>
+        </form>
+        <br/>
+        <table class="table">
             <tr>
+                <th>Property ID</th>
                 <th>Property Name</th>
                 <th>Property Description</th>
                 <th>Property Type</th>
             </tr>
-            <tr ng-repeat="x in properties">
+            <tr ng-repeat="x in properties.data track by x.id">
+                <td>{{ x.id }}</td>
                 <td>{{ x.propName }}</td>
                 <td>{{ x.description }}</td>
                 <td>{{ x.type }}</td>
             </tr>
         </table>
-        <br/>
         <form name="addPropForm">
-            <label>
-                Property name:
-                <input type="text" name="propName" ng-model="form.propName" required>
-            </label>
+            <div class="page-header">
+                <h3>Add property</h3>
+            </div>
+            <span class="label label-default">Property name</span>
+            <input type="text" class="form-control" ng-model="form.propName"
+                   placeholder="Property name" required>
             <br/>
-            <label>
-                Property Description:
-                <input type="text" name="propDesc" ng-model="form.propDesc" required>
-            </label>
+            <span class="label label-default">Property type</span>
+            <input type="text" class="form-control" ng-model="form.type"
+                   placeholder="Property Type" required>
             <br/>
-            <label>
-                Property Type:
-                <input type="text" name="type" ng-model="form.type" required>
-            </label>
+            <span class="label label-default">Property description</span>
+            <input type="text" class="form-control" ng-model="form.description"
+                   placeholder="Property Description" required>
             <br/>
-            <label>
-                Add property:
-                <input ng-click="add()" type="submit" value="Submit" />
-            </label>
+            <button class="btn btn-lg btn-default" ng-click="add()" type="submit" value="Submit">
+                Add
+            </button>
         </form>
+        <br/>
         <div>{{propAddResponse}}</div>
     </div>
 </div>
+
+<script src="/webjars/angularjs/1.6.9/angular.js"></script>
+<script src="/webjars/angularjs/1.6.9/angular-resource.js"></script>
+<script src="/webjars/angularjs/1.6.9/angular-route.js"></script>
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
 <script src="propsController.js"></script>
+
 </body>
 </html>
