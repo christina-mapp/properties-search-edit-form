@@ -1,4 +1,4 @@
-package main.model;
+package org.propproj.web.entity;
 
 import lombok.*;
 

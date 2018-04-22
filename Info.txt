@@ -14,5 +14,5 @@ Steps:
 9- Host using tomcat                                                    done
 10- Implement search with MVC and strategy pattern.                     done
 11- Use AngularJS front end to search using strategy.                   done
-12- Use sql inserts statements from yaml file.                          -
+12- Use sql inserts statements from yaml file.                          done
 13- Smoke test.                                                         done

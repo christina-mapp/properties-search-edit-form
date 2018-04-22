@@ -1,4 +1,4 @@
-package main.model.search;
+package org.propproj.web.model;
 
 import org.springframework.stereotype.Component;
 

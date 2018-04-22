@@ -1,6 +1,6 @@
-package main.model.repository;
+package org.propproj.web.dao;
 
-import main.model.Property;
+import org.propproj.web.entity.Property;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

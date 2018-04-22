@@ -1,6 +1,6 @@
-package main.service;
+package org.propproj.web.service;
 
-import main.model.Property;
+import org.propproj.web.entity.Property;
 
 public interface PropertiesService {
     Iterable<Property> findAll();

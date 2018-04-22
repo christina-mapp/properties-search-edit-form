@@ -1,7 +1,7 @@
-package main.model.search;
+package org.propproj.web.model;
 
-import main.model.Property;
-import main.model.repository.PropertiesRepository;
+import org.propproj.web.entity.Property;
+import org.propproj.web.dao.PropertiesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;

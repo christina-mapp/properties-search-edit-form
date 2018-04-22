@@ -1,8 +1,10 @@
-package main.service;
+package org.propproj.web.service;
 
-import main.model.Property;
-import main.model.search.*;
-import main.model.repository.PropertiesRepository;
+import org.propproj.web.entity.Property;
+import org.propproj.web.dao.PropertiesRepository;
+import org.propproj.web.model.SearchStrategyFactory;
+import org.propproj.web.model.SearchStrategyType;
+import org.propproj.web.model.SearchStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

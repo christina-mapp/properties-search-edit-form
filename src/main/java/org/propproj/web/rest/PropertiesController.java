@@ -1,7 +1,7 @@
-package main.controller;
+package org.propproj.web.rest;
 
-import main.model.Property;
-import main.service.PropertiesService;
+import org.propproj.web.entity.Property;
+import org.propproj.web.service.PropertiesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -37,6 +37,10 @@ angular.module('myPropsApp', [])
                 $url = '/props/searchbyid';
                 $param = {id: $scope.search["id"]};
             }
+            if (angular.isUndefined($param.propName) &&
+                angular.isUndefined($param.type) &&
+                angular.isUndefined($param.description) &&
+                angular.isUndefined($param.id)) $url = '/props/all'
             $http({
                 url: $url,
                 method: "GET",
@@ -46,6 +50,7 @@ angular.module('myPropsApp', [])
 
 
         function _success(response) {
+            _refreshPageData();
             $scope.properties = response;
             $scope.propAddResponse = "Saved";
         }

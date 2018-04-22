@@ -1,0 +1,78 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 1
+      author: springuser
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+          - tableExists:
+              schemaName: prop_db
+              tableName: property
+      changes:
+        - createTable:
+            tableName: property
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: prop_name
+                  type: varchar(100)
+              - column:
+                  name: description
+                  type: varchar(500)
+              - column:
+                  name: type
+                  type: varchar(20)
+  - changeSet:
+      id: sql-inserts
+      author: springuser
+      changes:
+      - sqlFile:
+          path: sql/inserts.sql
+          relativeToChangelogFile: true
+#  - changeSet:
+#      id: 2
+#      author: springuser
+#      changes:
+#        - insert:
+#            tableName: property
+#            columns:
+#              - column:
+#                  name: prop_name
+#                  value: prop 1
+#              - column:
+#                  name: description
+#                  value: prop 1 description
+#              - column:
+#                  name: type
+#                  value: public
+#        - insert:
+#            tableName: property
+#            columns:
+#              - column:
+#                  name: prop_name
+#                  value: prop 2
+#              - column:
+#                  name: description
+#                  value: prop 2 description
+#              - column:
+#                  name: type
+#                  value: secure
+#        - insert:
+#            tableName: property
+#            columns:
+#              - column:
+#                  name: prop_name
+#                  value: prop 3
+#              - column:
+#                  name: description
+#                  value: prop 3 description
+#              - column:
+#                  name: type
+#                  value: public

@@ -1,24 +1,24 @@
-package main.model.search;
+package org.propproj.web.model;
 
-import main.model.Property;
-import main.model.repository.PropertiesRepository;
+import org.propproj.web.entity.Property;
+import org.propproj.web.dao.PropertiesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component("searchByDescriptionStrategy")
-public class SearchByDescriptionStrategy implements SearchStrategy {
+@Component("searchByTypeStrategy")
+public class SearchByTypeStrategy implements SearchStrategy {
 
     @Autowired
     @Qualifier("myRepo")
     private PropertiesRepository propertiesRepository;
 
-    public SearchByDescriptionStrategy(PropertiesRepository propertiesRepository) {
+    public SearchByTypeStrategy(PropertiesRepository propertiesRepository) {
         this.propertiesRepository = propertiesRepository;
     }
 
     @Override
     public Iterable<Property> search(String searchText) {
-        return propertiesRepository.findByDescriptionContaining(searchText);
+        return propertiesRepository.findByTypeContaining(searchText);
     }
 }

@@ -1,6 +1,6 @@
-package main.model.search;
+package org.propproj.web.model;
 
-import main.model.Property;
+import org.propproj.web.entity.Property;
 
 public interface SearchStrategy {
     Iterable<Property> search(String searchText);

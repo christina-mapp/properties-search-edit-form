@@ -1,4 +1,4 @@
-package main;
+package org.propproj.web;
 
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;

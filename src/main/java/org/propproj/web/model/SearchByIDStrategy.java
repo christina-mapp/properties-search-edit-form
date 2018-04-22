@@ -1,9 +1,9 @@
-package main.model.search;
+package org.propproj.web.model;
 
-import main.model.Property;
+import org.propproj.web.dao.PropertiesRepository;
+import org.propproj.web.entity.Property;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import main.model.repository.PropertiesRepository;
 import org.springframework.stereotype.Component;
 
 @Component("searchByIDStrategy")
