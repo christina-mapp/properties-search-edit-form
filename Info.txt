@@ -4,15 +4,17 @@ Main purpose: Retain learned knowledge about spring, spring boot, maven, oracle 
 data persistence, OWASP Stinger security, liquibase and other technologies. 
 
 Steps:
-0- Connect to GitHub.                                                   done
-1- Maven and the pom file.                                              done
-2- Set up DB and connect to it.                                         done
-3- Setup liquibase and YAML files.                                      done
-4- Create DB table(s)                                                   done
-7- Set up DAO and connect to DB with persistence.                       done
-8- Create front end with AngularJS and MVC in mind.                     done
-9- Host using tomcat                                                    done
-10- Implement search with MVC and strategy pattern.                     done
-11- Use AngularJS front end to search using strategy.                   done
-12- Use sql inserts statements from yaml file.                          done
-13- Smoke test.                                                         done
+0- Connect to GitHub.                                                                                            done
+1- Maven and the pom file.                                                                                       done
+2- Set up DB and connect to it.                                                                                  done
+3- Setup liquibase and YAML files.                                                                               done
+4- Create DB table(s)                                                                                            done
+7- Set up DAO and connect to DB with persistence.                                                                done
+8- Create front end with AngularJS and MVC in mind.                                                              done
+9- Host using tomcat                                                                                             done
+10- Implement search with MVC and strategy pattern.                                                              done
+11- Use AngularJS front end to search using strategy.                                                            done
+12- Use sql inserts statements from yaml file.                                                                   done
+13- Smoke test.                                                                                                  done
+14- Implement with filter request                                                                                -
+15- Separate AngularJS controller and service call.                                                              -

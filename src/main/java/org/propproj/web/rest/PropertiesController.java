@@ -1,12 +1,16 @@
 package org.propproj.web.rest;
 
 import org.propproj.web.entity.Property;
+import org.propproj.web.model.SearchStrategy;
+import org.propproj.web.model.SearchStrategyFactory;
+import org.propproj.web.model.SearchStrategyType;
 import org.propproj.web.service.PropertiesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.*;
 
 @RestController
@@ -15,6 +19,9 @@ public class PropertiesController {
 
     @Autowired
     private PropertiesService propertiesService;
+
+    @Resource(name = "searchStrategyFactory")
+    private SearchStrategyFactory searchStrategyFactory;
 
     @GetMapping("/")
     public @ResponseBody String index() {
@@ -48,21 +55,25 @@ public class PropertiesController {
 
     @GetMapping(path="/searchbypropname")
     public @ResponseBody Iterable<Property> searchByPropName (@RequestParam String propName) {
-        return propertiesService.searchByPropName(propName);
+        propertiesService.setSearchStrategy(searchStrategyFactory.getSearchStrategy(SearchStrategyType.BYNAME));
+        return propertiesService.search(propName);
     }
 
     @GetMapping(path="/searchbytype")
     public @ResponseBody Iterable<Property> searchByType (@RequestParam String type) {
-        return propertiesService.searchByType(type);
+        propertiesService.setSearchStrategy(searchStrategyFactory.getSearchStrategy(SearchStrategyType.BYTYPE));
+        return propertiesService.search(type);
     }
 
     @GetMapping(path="/searchbydescription")
     public @ResponseBody Iterable<Property> searchByDescription (@RequestParam String description) {
-        return propertiesService.searchByDescription(description);
+        propertiesService.setSearchStrategy(searchStrategyFactory.getSearchStrategy(SearchStrategyType.BYDESCRIPTION));
+        return propertiesService.search(description);
     }
 
     @GetMapping(path="/searchbyid")
     public @ResponseBody Iterable<Property> searchById (@RequestParam Long id) {
-        return propertiesService.searchById(id);
+        propertiesService.setSearchStrategy(searchStrategyFactory.getSearchStrategy(SearchStrategyType.BYID));
+        return propertiesService.search(""+id);
     }
 }

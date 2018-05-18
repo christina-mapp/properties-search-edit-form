@@ -18,10 +18,11 @@ public class PropertiesServiceImpl implements PropertiesService {
     @Qualifier("myRepo")
     private PropertiesRepository propertiesRepository;
 
-    @Resource(name = "searchStrategyFactory")
-    private SearchStrategyFactory searchStrategyFactory;
-
     private SearchStrategy searchStrategy;
+
+    public void setSearchStrategy(SearchStrategy searchStrategy) {
+        this.searchStrategy = searchStrategy;
+    }
 
     @Override
     public Iterable<Property> findAll() {
@@ -34,26 +35,7 @@ public class PropertiesServiceImpl implements PropertiesService {
     }
 
     @Override
-    public Iterable<Property> searchByPropName(String propName) {
-        searchStrategy = searchStrategyFactory.getSearchStrategy(SearchStrategyType.BYNAME);
-        return searchStrategy.search(propName);
-    }
-
-    @Override
-    public Iterable<Property> searchByType(String type) {
-        searchStrategy = searchStrategyFactory.getSearchStrategy(SearchStrategyType.BYTYPE);
-        return searchStrategy.search(type);
-    }
-
-    @Override
-    public Iterable<Property> searchByDescription(String description) {
-        searchStrategy = searchStrategyFactory.getSearchStrategy(SearchStrategyType.BYDESCRIPTION);
-        return searchStrategy.search(description);
-    }
-
-    @Override
-    public Iterable<Property> searchById(Long id) {
-        searchStrategy = searchStrategyFactory.getSearchStrategy(SearchStrategyType.BYID);
-        return searchStrategy.search(""+id);
+    public Iterable<Property> search(String searchString) {
+        return searchStrategy.search(searchString);
     }
 }

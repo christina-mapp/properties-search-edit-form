@@ -1,17 +1,14 @@
 package org.propproj.web.service;
 
 import org.propproj.web.entity.Property;
+import org.propproj.web.model.SearchStrategy;
 
 public interface PropertiesService {
     Iterable<Property> findAll();
 
     void save(Property property);
 
-    Iterable<Property> searchByPropName(String propName);
+    Iterable<Property> search(String searchString);
 
-    Iterable<Property> searchByType(String type);
-
-    Iterable<Property> searchByDescription(String description);
-
-    Iterable<Property> searchById(Long id);
+    void setSearchStrategy(SearchStrategy searchStrategy);
 }
